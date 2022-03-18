@@ -25,6 +25,7 @@ This repository is for holding all of my work that isn't ready for inclusion in 
 - [ ] - minetest.sh - Minecraft Clone - Tested and works with lowest resolution and settings, burningsvideo driver. Embed low options as default?  
 - [ ] - moonlight.sh - Open Source nVidia GameStreaming - A newer package is available, currently untested.  
 - [ ] - openfodder.sh - Open source Cannon Fodder engine - Instable, crashes during second mission.  
+- [ ] - prototype.sh - Free R-Type remake by Ron Bunce - Gamepad support incomplete, a keyboard is required to exit once game is begun.
 - [ ] - roadfighter.sh - Open source remake of Konami's Road Fighter - Cannot compile as is under Stretch, bug is upstream.
 - [ ] - retrobattle.sh - No longer compiles under Stretch. Error is upstream.
 - [ ] - rockbot.sh - Open source Megaman style game - Cannot be compiled on Pi anymore, need new compilatin instructions.
