@@ -16,6 +16,7 @@ This repository is for holding all of my work that isn't ready for inclusion in 
 - [ ] - abuse.sh - Classic action game - Appears to have some stability issues as well as problems with sound/audio dropping out. Does not full screen properly yet.  
 - [ ] - alephone-community.sh - Additional scenarios for AlephOne - Some instability with Alephone on Raspberry Pi. Working on it.  
 - [ ] - caveexpress.sh - Cave Express game - Not working, some major compilation issues.
+- [ ] - chopper258.sh - Chopper Commando Revisited - A modern port of Chopper Commando (DOS, 1990), written by Mark Currie and ported by loadzero - **Tested and works. A keyboard is required.**
 - [ ] - extremetuxracer.sh - Extreme Linux racing game - ???
 - [ ] - f2bgl.sh - Fade To Black engine - Segfaults on launch.  
 - [ ] - freegish.sh - Gish clone - Runs with glshim however very, very slowly. Might need some additional glshim options.  
