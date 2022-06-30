@@ -13,8 +13,7 @@ This repository is for holding all of my work that isn't ready for inclusion in 
 - [ ] - lr-sameboy.sh - Gameboy/Gameboy Color emulator for libretro - Something about how RetroPie-Setup compiles causes this to fail and I'm unsure why. Might be too heavy for Raspberry Pi 3 but seems fine on ODROID XU4.
 
 ##### Ports
-- [ ] - abuse.sh - Classic action game - Appears to have some stability issues as well as problems with sound/audio dropping out. Does not full screen properly yet.  
-- [ ] - alephone-community.sh - Additional scenarios for AlephOne - Some instability with Alephone on Raspberry Pi. Working on it.  
+  - [ ] - alephone-community.sh - Additional scenarios for AlephOne - Some instability with Alephone on Raspberry Pi. Working on it.  
 - [ ] - caveexpress.sh - Cave Express game - Not working, some major compilation issues.
 - [ ] - chopper258.sh - Chopper Commando Revisited - A modern port of Chopper Commando (DOS, 1990), written by Mark Currie and ported by loadzero - **Tested and works. A keyboard is required.**
 - [ ] - extremetuxracer.sh - Extreme Linux racing game - ???
@@ -43,3 +42,4 @@ This repository is for holding all of my work that isn't ready for inclusion in 
 
 ### Hall of Fame - Scripts accepted into RetroPie-Extra
 - [X] - freedink.sh - Dink Smallwood engine - Lots of flicker on sprites and text, currently solved. Tested and works well.  
+- [x] - abuse.sh - Classic action game - Appears to have some stability issues as well as problems with sound/audio dropping out. Does not full screen properly yet.
