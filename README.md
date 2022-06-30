@@ -13,9 +13,9 @@ This repository is for holding all of my work that isn't ready for inclusion in 
 - [ ] - lr-sameboy.sh - Gameboy/Gameboy Color emulator for libretro - Something about how RetroPie-Setup compiles causes this to fail and I'm unsure why. Might be too heavy for Raspberry Pi 3 but seems fine on ODROID XU4.
 
 ##### Ports
-  - [ ] - alephone-community.sh - Additional scenarios for AlephOne - Some instability with Alephone on Raspberry Pi. Working on it.  
+- [ ] - alephone-community.sh - Additional scenarios for AlephOne - Some instability with Alephone on Raspberry Pi. Working on it.  
 - [ ] - caveexpress.sh - Cave Express game - Not working, some major compilation issues.
-- [ ] - chopper258.sh - Chopper Commando Revisited - A modern port of Chopper Commando (DOS, 1990), written by Mark Currie and ported by loadzero - **Tested and works. A keyboard is required.**
+- [ ] - amphetamine.sh - 2D Platforming Game - Tested, runs well. cant go full screen, small and in the upper left corner.
 - [ ] - extremetuxracer.sh - Extreme Linux racing game - ???
 - [ ] - f2bgl.sh - Fade To Black engine - Segfaults on launch.  
 - [ ] - freegish.sh - Gish clone - Runs with glshim however very, very slowly. Might need some additional glshim options.  
@@ -25,7 +25,7 @@ This repository is for holding all of my work that isn't ready for inclusion in 
 - [ ] - minetest.sh - Minecraft Clone - Tested and works with lowest resolution and settings, burningsvideo driver. Embed low options as default?  
 - [ ] - moonlight.sh - Open Source nVidia GameStreaming - A newer package is available, currently untested.  
 - [ ] - openfodder.sh - Open source Cannon Fodder engine - Instable, crashes during second mission.  
-- [ ] - prototype.sh - Free R-Type remake by Ron Bunce - Gamepad support incomplete, a keyboard is required to exit once game is begun.
+
 - [ ] - roadfighter.sh - Open source remake of Konami's Road Fighter - Cannot compile as is under Stretch, bug is upstream.
 - [ ] - retrobattle.sh - No longer compiles under Stretch. Error is upstream.
 - [ ] - rockbot.sh - Open source Megaman style game - Cannot be compiled on Pi anymore, need new compilatin instructions.
@@ -42,4 +42,6 @@ This repository is for holding all of my work that isn't ready for inclusion in 
 
 ### Hall of Fame - Scripts accepted into RetroPie-Extra
 - [X] - freedink.sh - Dink Smallwood engine - Lots of flicker on sprites and text, currently solved. Tested and works well.  
-- [x] - abuse.sh - Classic action game - Appears to have some stability issues as well as problems with sound/audio dropping out. Does not full screen properly yet.
+- [X] - abuse.sh - Classic action game - Appears to have some stability issues as well as problems with sound/audio dropping out. Does not full screen properly yet.
+- [X] - chopper258.sh - Chopper Commando Revisited - A modern port of Chopper Commando (DOS, 1990), written by Mark Currie and ported by loadzero - **Tested and works. A keyboard is required.**
+- [X] - prototype.sh - Free R-Type remake by Ron Bunce - Gamepad support incomplete, a keyboard is required to exit once game is begun.
