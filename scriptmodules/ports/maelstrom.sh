@@ -1,17 +1,19 @@
 #!/usr/bin/env bash
 
-# This file is part of The RetroPie Project
-# 
-# The RetroPie Project is the legal property of its developers, whose names are
-# too numerous to list here. Please refer to the COPYRIGHT.md file distributed with this source.
-# 
-# See the LICENSE.md file at the top-level directory of this distribution and 
-# at https://raw.githubusercontent.com/RetroPie/RetroPie-Setup/master/LICENSE.md
+# This file is part of RetroPie-Extra, a supplement to RetroPie.
+# For more information, please visit:
+#
+# https://github.com/RetroPie/RetroPie-Setup
+# https://github.com/Exarkuniv/RetroPie-Extra
+#
+# See the LICENSE file distributed with this source and at
+# https://raw.githubusercontent.com/Exarkuniv/RetroPie-Extra/master/LICENSE
 #
 
 rp_module_id="maelstrom"
 rp_module_desc="Maelstrom - Classic Mac Asteroids Remake"
 rp_module_licence="GPL2 https://www.gnu.org/licenses/gpl-2.0.txt"
+rp_module_repo="file https://www.libsdl.org/projects/Maelstrom/src/Maelstrom-3.0.6.tar.gz"
 rp_module_section="exp"
 rp_module_flags="!x86 !mali"
 
@@ -20,8 +22,7 @@ function depends_maelstrom() {
 }
 
 function sources_maelstrom() {
-    wget https://www.libsdl.org/projects/Maelstrom/src/Maelstrom-3.0.6.tar.gz
-    tar zxvf Maelstrom-3.0.6.tar.gz
+    downloadAndExtract "$md_repo_url" "$md_build"
 }
 
 function build_maelstrom() {
