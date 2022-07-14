@@ -7,7 +7,9 @@ This repository is for holding all of my work that isn't ready for inclusion in 
 #### Testing
 ##### Emulators
 - [ ] - beebem.sh - BBC Micro emulator - Working, won't run game from command line. Disk load issue fixed.  
-
+- [ ] - fuse-1.6.sh - newer fuse emulator - failes build
+- [ ] - supermodel-mechafatnick.sh - supermodel - needs to build twice
+- [ ] - vice-3.6.1.sh - newer vice emulator - failes to build
 ##### libretrocores
 - [ ] - lr-craft.sh - libretro-based Minecraft clone - Does not work on Pi due to missing OpenGLES2 support. Would require a version of RetroArch compiled against OpenGL. Not happening.  
 - [ ] - lr-sameboy.sh - Gameboy/Gameboy Color emulator for libretro - Something about how RetroPie-Setup compiles causes this to fail and I'm unsure why. Might be too heavy for Raspberry Pi 3 but seems fine on ODROID XU4.
