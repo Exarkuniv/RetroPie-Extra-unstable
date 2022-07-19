@@ -1,27 +1,29 @@
 #!/usr/bin/env bash
 
-# This file is part of The RetroPie Project
-# 
-# The RetroPie Project is the legal property of its developers, whose names are
-# too numerous to list here. Please refer to the COPYRIGHT.md file distributed with this source.
-# 
-# See the LICENSE.md file at the top-level directory of this distribution and 
-# at https://raw.githubusercontent.com/RetroPie/RetroPie-Setup/master/LICENSE.md
+# This file is part of RetroPie-Extra, a supplement to RetroPie.
+# For more information, please visit:
+#
+# https://github.com/RetroPie/RetroPie-Setup
+# https://github.com/Exarkuniv/RetroPie-Extra
+#
+# See the LICENSE file distributed with this source and at
+# https://raw.githubusercontent.com/Exarkuniv/RetroPie-Extra/master/LICENSE
 #
 
 rp_module_id="lr-craft"
-rp_module_desc="Craft - a libretro-based Minecraft clone"
+rp_module_desc="Minecraft engine - Craft port for libretro"
 rp_module_licence="MIT https://raw.githubusercontent.com/libretro/Craft/master/LICENSE.md"
+rp_module_repo="git https://github.com/libretro/Craft master"
 rp_module_section="exp"
-rp_module_flags="!arm"
+rp_module_flags=""
 
 function sources_lr-craft() {
-    gitPullOrClone "$md_build" https://github.com/libretro/Craft.git
+    gitPullOrClone
 }
 
 function build_lr-craft() {
     make -f Makefile.libretro clean
-    make -f Makefile.libretro 
+    make -f Makefile.libretro
     md_ret_require="$md_build/craft_libretro.so"
 }
 
@@ -32,8 +34,9 @@ function install_lr-craft() {
 }
 
 function configure_lr-craft() {
-    mkRomDir "craft"
-    ensureSystemretroconfig "lr-craft"
+    setConfigRoot "ports"
 
-    addSystem 0 "$md_id" "lr-craft" "$md_inst/craft_libretro.so"
+    addPort "$md_id" "craft" "Craft" "$md_inst/craft_libretro.so"
+
+    ensureSystemretroconfig "ports/craft"
 }
