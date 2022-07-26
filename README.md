@@ -17,6 +17,7 @@ This repository is for holding all of my work that isn't ready for inclusion in 
 ##### Ports
 - [ ] - alephone-community.sh - Additional scenarios for AlephOne - Some instability with Alephone on Raspberry Pi. Working on it.  
 - [ ] - caveexpress.sh - Cave Express game - Not working, some major compilation issues.
+- [ ] - corsixth.sh - Theme Hospital engine clone - **Installs, Lua error, will not play**
 - [ ] - amphetamine.sh - 2D Platforming Game - Tested, runs well. cant go full screen, small and in the upper left corner.
 - [ ] - extremetuxracer.sh - Extreme Linux racing game - ???
 - [ ] - f2bgl.sh - Fade To Black engine - Segfaults on launch.  
