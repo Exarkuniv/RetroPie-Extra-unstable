@@ -17,7 +17,7 @@ rp_module_section="exp"
 rp_module_flags="!armv6 rpi4"
 
 function depends_gta3() {
-    getDepends xorg libopenal1 libsndfile1 libmpg123-0
+    getDepends xorg libopenal1 libsndfile1 libmpg123-0 matchbox libghc-openglraw-dev libglfw3-dev libglfw3
 }
 
 function sources_gta3() {
@@ -35,43 +35,32 @@ function install_gta3() {
 		're3'
 		're3.ini'
 		'gamecontrollerdb.txt'
-		'00000809.256'
-		'00000809.016'
-		'00000410.256'
-		'00000410.016'
-		'00000409.256'
-		'00000409.016'
-		'00000407.256'
-		'00000407.016'
-		'0000040c.256'
-		'0000040c.016'
-		'00000c0a.256'
-		'00000c0a.016'
-		'gta3.ico'
 		'gta3.ini'
 		'secdrv.sys'
     )
 }
 
 function configure_gta3() {
-    mkRomDir "$romdir/ports/gta3"
-    #ln -snf "$romdir/ports/gta3" "$md_inst"   
-     #moveConfigDir "$romdir/ports/diablo2/save" "$md_conf_root/diablo2/save"
+    mkRomDir "ports/gta3"
+
+    #ln -snf "$romdir/ports/gta3" "$md_inst"
+    ln -sf "$md_inst/re3" "$romdir/ports/gta3/re3"
+    #moveConfigDir "$romdir/ports/diablo2/save" "$md_conf_root/diablo2/save"
 
     cp -Rv "$md_inst/data" "$romdir/ports/$md_id/data"
     cp -Rv "$md_inst/models" "$romdir/ports/$md_id/models"
     cp -Rv "$md_inst/TEXT" "$romdir/ports/$md_id/TEXT"
     cp -Rv "$md_inst/neo" "$romdir/ports/$md_id/neo"
 
-    local script="$md_id.sh"
+    local script="$md_inst/$md_id.sh"
     cat > "$script" << _EOF_
 #!/bin/bash
-pushd "$romdir/ports/$md_id"
-$md_inst/re3.sh \$*
-popd
+xset -dpms s off s noblank
+matchbox-window-manager -use_titlebar no &
+$romdir/ports/gta3/re3 -fullscreen -1024x768
 _EOF_
 
-    chown -R $user:$user "$romdir/ports/gta3"
     chmod +x "$script"
-    addPort "$md_id" "gta3" "Grand Theft Auto 3" "XINIT: $md_inst/$script"
+    chown -R $user:$user "$romdir/ports/gta3"
+    addPort "$md_id" "gta3" "Grand Theft Auto 3" "XINIT: $md_inst/$md_id.sh"
 }
