@@ -18,6 +18,9 @@ rp_module_flags="!armv6 rpi4"
 
 function depends_gta3() {
     getDepends xorg libopenal1 libsndfile1 libmpg123-0 matchbox libghc-openglraw-dev libglfw3-dev libglfw3
+	
+	if [[ ! -e /usr/lib/arm-linux-gnueabihf/libglfw.so.3 ]]; then
+        download_and_install "https://misapuntesde.com/rpi_share/libglfw3_3.3.2-1_armhf.deb"
 }
 
 function sources_gta3() {
