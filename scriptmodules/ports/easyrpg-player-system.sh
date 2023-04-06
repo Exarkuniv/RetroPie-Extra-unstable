@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+# This file is part of RetroPie-Extra, a supplement to RetroPie.
+# For more information, please visit:
+#
+# https://github.com/RetroPie/RetroPie-Setup
+# https://github.com/Exarkuniv/RetroPie-Extra
+#
+# See the LICENSE file distributed with this source and at
+# https://raw.githubusercontent.com/Exarkuniv/RetroPie-Extra/master/LICENSE
+#
+
+rp_module_id="easyrpg-player-system"
+rp_module_desc="RPG Maker 2000/2003 - EasyRPG Player Interpreter"
+rp_module_help="ROM Extension: .ldb\n\nYou need to unzip your RPG Maker games into subdirectories in $romdir/ports/easyrpg/games\n\nRTP file:\nExtract the RTP files from their respective .exe installers and then copy RTP 2000 files in $biosdir/rtp/2000 and RTP 2003 files in $biosdir/rtp/2003."
+rp_module_licence="GPL3 https://raw.githubusercontent.com/EasyRPG/Player/master/COPYING"
+rp_module_repo="git https://github.com/EasyRPG/Player.git master"
+rp_module_section="exp"
+rp_module_flags="!mali"
+
+function depends_easyrpg-player-system() {
+    getDepends cmake autoconf automake libtool doxygen libsdl2-dev libsdl2-mixer-dev libpng-dev libfreetype6-dev libboost-dev libpixman-1-dev libmpg123-dev libwildmidi-dev libvorbis-dev libopusfile-dev libsndfile1-dev libxmp-dev libspeexdsp-dev libharfbuzz-dev libfmt-dev zlib1g-dev libraspberrypi-dev libraspberrypi-bin expat libexpat1-dev libexpat-ocaml-dev
+}
+
+function sources_easyrpg-player-system() {
+    gitPullOrClone
+}
+
+function build_easyrpg-player-system() {
+     sed -i 's#APPEND_STRING PROPERTY#APPEND PROPERTY#' "$md_build/builds/cmake/Modules/FindSDL2.cmake"
+    sed -i 's#INTERFACE_LINK_LIBRARIES "${SDL2PC_STATIC_LIBRARIES}")#INTERFACE_INCLUDE_DIRECTORIES "${SDL2PC_STATIC_LIBRARY_DIRS}")#' "$md_build/builds/cmake/Modules/FindSDL2.cmake"
+    cmake . -DCMAKE_BUILD_TYPE=Release -DPLAYER_BUILD_LIBLCF=ON
+    cmake --build .
+
+    md_ret_require="$md_build/easyrpg-player"
+}
+
+function install_easyrpg-player-system() {
+    md_ret_files=(
+        'easyrpg-player'
+    )
+}
+
+function remove_easyrpg-player-system() {
+    for x in liblcf; do
+        rm -rf "/usr/include/$x"
+        rm -rf "/usr/lib/$x"*
+        rm -rf "/usr/lib/cmake/$x"
+        rm -rf "/usr/lib/pkgconfig/$x"*
+        rm -rf "/usr/share/mime/packages/$x"*
+    done
+}
+
+function configure_easyrpg-player-system() {
+    setConfigRoot ""
+    mkRomDir "easyrpg/games/"
+    mkUserDir "$biosdir/rtp/2000"
+    mkUserDir "$biosdir/rtp/2003"
+
+    addEmulator 1 "EasyRPG Player" "easyrpg" "cd $romdir/ports/easyrpg/games/; RPG2K_RTP_PATH=$biosdir/rtp/2000/ RPG2K3_RTP_PATH=$biosdir/rtp/2003 $md_inst/easyrpg-player"
+    addSystem "easyrpg" "easyrpg" ".ldb .LDB"
+
+}
